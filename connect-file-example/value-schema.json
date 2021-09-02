@@ -1,0 +1,19 @@
+{
+    "type": "STRUCT",
+    "isOptional": false,
+    "version": 1,
+    "fieldSchemas": {
+        "name": {
+            "type": "STRING",
+            "isOptional": false
+        },
+        "otros": {
+            "type": "STRING",
+            "isOptional": true
+        },
+        "mas": {
+            "type": "STRING",
+            "isOptional": true
+        }
+    }
+}

@@ -1,0 +1,13 @@
+{
+    "tasks.max": "1",
+    "connector.class": "com.github.jcustenborder.kafka.connect.spooldir.SpoolDirJsonSourceConnector",
+    "input.path": "/datos/entrada",
+    "input.file.pattern": ".*.json",
+    "error.path": "/datos/errores",
+    "finished.path": "/datos/historico",
+    "halt.on.error": "false",
+    "topic": "spooldir-testing-topic",
+
+    "key.schema": "{\"type\":\"STRUCT\",\"isOptional\":true,\"version\":1,\"fieldSchemas\":{\"name\":{\"type\":\"STRING\",\"isOptional\":false}}}",
+    "value.schema": "{\"type\":\"STRUCT\",\"isOptional\":false,\"version\":1,\"fieldSchemas\":{\"name\":{\"type\":\"STRING\",\"isOptional\":false},\"otros\":{\"type\":\"STRING\",\"isOptional\":true},\"mas\":{\"type\":\"STRING\",\"isOptional\":true}}}"
+}

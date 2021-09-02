@@ -1,0 +1,11 @@
+{
+    "type": "STRUCT",
+    "isOptional": true,
+    "version": 1,
+    "fieldSchemas": {
+        "name": {
+            "type": "STRING",
+            "isOptional": false
+        }
+    }
+}
