@@ -1,0 +1,6 @@
+{
+    "tasks.max": "1",
+    "connector.class": "FileStreamSink",
+    "topics": "spooldir-testing-topic",
+    "file": "/datos/sink/output_file"
+}

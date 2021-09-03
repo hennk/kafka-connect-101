@@ -4,6 +4,28 @@
 
 https://docs.confluent.io/platform/current/connect/concepts.html
 
+https://docs.confluent.io/3.1.1/_images/converter-basics.png
+
+Alguna fuente ->
+
+    Kafka Connect Worker
+
+        Source Connector
+
+            Source Task (lee de fuente, crea un ConnectRecord) -> Single Message Transformations (optional) -> Converter (serializa ConnectRecord a mensaje Kafka)
+
+-> Tópico en Kafka
+
+Tópico en Kafka ->
+
+    Kafka Connect Worker
+
+        Sink Connector
+
+            Converter (deserializa mensaje Kafka a ConnectRecord) -> Single Message Transformations (optional) -> Sink Task (escribe en destino)
+
+-> Algún destino
+
 ## Preparación
 
 ```
@@ -71,3 +93,25 @@ CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
 ```
 
 es decir, KEY como string y VALUE en formato Avro.
+
+## Errores
+
+### Troubleshooting
+
+https://developer.confluent.io/learn-kafka/kafka-connect/troubleshooting-kafka-connect/
+
+* Conectar por API Rest para ver último error y estado
+
+### Tratamiento de errores y dead-letter-queue
+
+https://developer.confluent.io/learn-kafka/kafka-connect/error-handling-and-dead-letter-queues/
+
+* Error tolerances, lo que hace y como configurarlo
+* Dead letter queue, estrategias, por ejemplo simplemente configurar otra tarea que lee de la DLQ
+
+## Crear un connector sink desde 0
+
+https://github.com/apache/kafka/tree/2.8/connect/file/src/main/java/org/apache/kafka/connect/file
+
+* FileStreamSinkConnector simplemente, según número configurado de tasks, devuelve la configuración de cada Task
+* FileStreamSinkTask se instancia n veces según número configurado de tasks, y en método put recibe los Records y los escribe en el outputStream
