@@ -6,6 +6,7 @@ https://docs.confluent.io/platform/current/connect/concepts.html
 
 https://docs.confluent.io/3.1.1/_images/converter-basics.png
 
+```
 Alguna fuente ->
 
     Kafka Connect Worker
@@ -25,6 +26,7 @@ Tópico en Kafka ->
             Converter (deserializa mensaje Kafka a ConnectRecord) -> Single Message Transformations (optional) -> Sink Task (escribe en destino)
 
 -> Algún destino
+```
 
 ## Preparación
 
