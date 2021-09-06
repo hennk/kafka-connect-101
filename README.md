@@ -102,7 +102,7 @@ es decir, KEY como string y VALUE en formato Avro.
 
 https://developer.confluent.io/learn-kafka/kafka-connect/troubleshooting-kafka-connect/
 
-* Conectar por API Rest para ver último error y estado
+* Conectar por API Rest para ver último error y estado: ```curl http://localhost:8083/connectors/sink-file-01/status```
 
 ### Tratamiento de errores y dead-letter-queue
 
