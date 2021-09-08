@@ -16,7 +16,9 @@ Alguna fuente ->
             Source Task (lee de fuente, crea un ConnectRecord) -> Single Message Transformations (optional) -> Converter (serializa ConnectRecord a mensaje Kafka)
 
 -> Tópico en Kafka
+```
 
+```
 Tópico en Kafka ->
 
     Kafka Connect Worker
@@ -69,6 +71,10 @@ cp connect-file-example/examples/message1.json connect-file-example/datos/entrad
 cp connect-file-example/examples/message2.json connect-file-example/datos/entrada/
 ```
 
+### Esquema del conector
+
+Este conector define el esquema mediante un lenguaje de esquemas interno a Kafka Connect: https://kafka.apache.org/20/javadoc/org/apache/kafka/connect/data/Schema.html
+
 ## Eliminar connector
 
 ```
@@ -95,6 +101,8 @@ CONNECT_VALUE_CONVERTER: io.confluent.connect.avro.AvroConverter
 ```
 
 es decir, KEY como string y VALUE en formato Avro.
+
+https://www.confluent.io/blog/kafka-connect-deep-dive-converters-serialization-explained/
 
 ## Errores
 
